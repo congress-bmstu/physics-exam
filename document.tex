@@ -9,6 +9,17 @@
 \usepackage{enumitem}
 
 \usepackage{epigraph}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+% для волнистой линии для фотонов создал стиль линии snake arrow
+% рисует волну и на конце ее чуть-чуть прямую линию оставляет для стрелки
+\tikzset{snake arrow/.style=
+	{->,
+		decorate,
+		decoration={snake,amplitude=.4mm,segment length=2mm,post length=1mm}},
+}
+
 \usepackage{float}
 \usepackage{multicol}
 %\usepackage{hyperref}
