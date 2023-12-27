@@ -2,6 +2,71 @@
 
 \subsubsection{Волны Де Бройля}
 
+\paragraph{Общий случай} Плоская волна частотой $\omega$, распространяющаяся вдоль оси $x$:
+\begin{equation*}
+	\xi(x,t) = A \exp \left\{-i(\omega t -kx)\right\},
+\end{equation*}
+где $A$ - амплитуда, $k=\frac{2\pi}{\lambda}$ - волновое число.
+
+\paragraph{Гипотеза Де Бройля} 
+Свободной частице с энергией $E$ и импульсом $p$, движущейся вдоль $x$, соответсвует плоская волна:
+\begin{equation*}
+	\Psi(x, t) = A \exp \left\{-\frac{i}{\hbar}(E t - px)\right\}
+\end{equation*}
+Посмотрев на выражения волновых процессов в общем виде $\xi$ и для волны Де Бройля $\Psi$, заметим некоторые соотношения:
+\begin{itemize}
+	\item частота $\omega = \frac{E}{\hbar}$
+	\item длина волны Де Бройля $\lambda_{\text{Б}}=\frac{2\pi\hbar}{p}$
+	\item энергия $E = \hbar \omega = h\nu$
+	\item $\vec p = h \vec k$, где $\vec k$ - волновой вектор
+\end{itemize}
+
+\paragraph{Свойства волн Де Бройля}
+\begin{enumerate}
+	\item В процессе распространения волны могут отражаться, преломляться, интерферировать и дифрагировать по обычным волновым законам
+	
+	\item Фазовая скорость $v_\text{фаз}$ - скорость, с которой распространяются точки волны с постоянной фазой.
+	Выражение для фазовой скорости вытекает из условия постоянности фазы при его дифференцировании:
+	\begin{equation*}
+		Et-px=\mathrm{const} \overset{\dfrac{d}{dt}}{\longrightarrow} v_\text{фаз} = \frac{dx}{dt} = \frac{E}{p}.
+	\end{equation*}
+	При подстановке известных соотношений, а именно $E=mc^2$ и $p=mv$ в $v_\text{фаз}$, получим
+	\begin{equation*}
+		v_\text{фаз} = \frac{c^2}{v}
+	\end{equation*} выражение для фазовой скорости\footnote{$v<c \implies v_\text{фаз} = \frac{c^2}{v} > c$ --- это не противоречит СТО. Ограничения, накладываемые СТО касаются скорости переноса массы/энергии, но фазовая скорость волны ничего из этого не характеризует.}.
+	
+	\item Групповая скорость $v_\text{гр}$
+	\begin{equation*}
+		v_\text{гр} = \frac{dw}{dk} = \frac{d(\hbar\omega)}{d(\hbar k)} = \frac{dE}{dp}
+	\end{equation*}
+	Возьмем известное всем выражение из теории относительности:
+	\begin{equation*}
+		E^2=p^2c^2+E_0^2=\left[E_0=m_0c^2\right]=E^2=p^2c^2+m_0^2c^4\overset{\dfrac{d}{dt}}{\longrightarrow}2EdE=2pc^2dp\longrightarrow\frac{dE}{dp}=\frac{pc^2}{E}
+	\end{equation*}
+	Воспользовавшись этим знанием, получаем, что групповая скорость волны равна скорости движения частицы:
+	\begin{equation*}
+		v_\text{гр} = \frac{pc^2}{E} = \frac{pc^2}{mc^2} = \frac{p}{m} = v
+	\end{equation*}
+	
+	\item Длина волны Де Бройля для нерелятивистских $(v\ll c)$ и релятивистких ($v\approx c$) частиц.
+	\begin{itemize}
+		\item Нерелятивисткий случай $(v\ll c)$:
+		\begin{equation*}
+		E_k=\frac{mv^2}{2}=\frac{p^2}{2m_0}\implies p=\sqrt{2m_0E_k}\implies \lambda_\text{Б}=\frac{2\pi\hbar}{p}=\frac{2\pi\hbar}{\sqrt{2m_0E_k}}
+		\end{equation*}
+		\item Релятивистский случай $(v\approx c)$:
+		\begin{equation*}
+		p=\frac{1}{c}\sqrt{E_k(E_k+2m_0c^2)}=\sqrt{2m_0E_k}\sqrt{1+\frac{E_k}{2m_0c^2}}\implies\lambda_\text{Б}'=\frac{2\pi\hbar}{\sqrt{2m_0E_k}\sqrt{1+\frac{E_k}{2m_0c^2}}}
+		\end{equation*}
+		В этом выражении можно выделить нерелятивистскую дебройлевскую длину волны $\lambda_\text{Б}$, тогда 
+		\begin{equation*}
+			\lambda_\text{Б}'=\frac{\lambda_\text{Б}}{\sqrt{1+\frac{E_k}{2m_0c^2}}}
+		\end{equation*}
+	\end{itemize}
+\end{enumerate}
+
+
+
 \subsubsection{Соотношения неопределенностей Гейзенберга}
 
 \subsubsection{Постулаты квантовой механики}
