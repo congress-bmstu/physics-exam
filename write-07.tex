@@ -33,9 +33,9 @@ $dn_{e, [E, E+\Delta E]} \sim \dfrac{\sqrt{E}}{e^{\dfrac{E-E_F}{kT}} + 1} dE$ --
 так как $v \sim p$, $\vec{v}$ сонаправлен с $\vec{p}$ и $dn_e (v_x) \sim dn_e(p_x)$.
 Учитывая также, что $E > U_0 = E_F + A_B, A_B \gg kT$, можно получить, что 
 \[
-  e^\dfrac{E-E_F}{kT} \gg 1
+  e^{\dfrac{E-E_F}{kT}} \gg 1
   \Rightarrow
-  dn_e (\vec{p}) \sim e^\dfrac{E_F}{kT} \cdot e^\dfrac{- E(\vec{p})}{kT} dp_x dp_y dp_z
+  dn_e (\vec{p}) \sim e^{\dfrac{E_F}{kT}} \cdot e^{\dfrac{- E(\vec{p})}{kT}} dp_x dp_y dp_z
 \]
 Дальше что-то очень простое:
 \[
@@ -50,14 +50,15 @@ $dn_{e, [E, E+\Delta E]} \sim \dfrac{\sqrt{E}}{e^{\dfrac{E-E_F}{kT}} + 1} dE$ --
   \sim T e^{\dfrac{E_F}{kT}} \cdot e^{-\dfrac{p_x^2}{2m_e kT}} dp_x
 \]
 Объединяя все полученные результаты:
-\[
+\begin{multline*}
   dJ_x \sim v_x \cdot dn_e (v_x) \sim p_x dn_e (p_x)
   \Rightarrow
   dJ_x \sim P_x T e^{\dfrac{E_F}{kT}} \cdot e^{-\dfrac{p_x^2}{2m_e kT}} dp_x
+  \Rightarrow \\
   \Rightarrow
   J_x \sim T e^{\dfrac{E_F}{kT}} \int_{p_x, \min}^{+\infty} e^{-\dfrac{p_x^2}{2m_e kT}} p_x dp_x
   \sim T^2 e^{\dfrac{E_F}{kT}} \cdot e^{-\dfrac{(E_F + A_B)}{kT}}
   = T^2 e^{- \dfrac{A_B}{kT}}
-\]
+\end{multline*}
 здесь не очевидно было что такое $p_{x, \min}$, а это такой импульс, что энергия такой частицы
 равна $U_0$, то есть $\dfrac{p_{x, \min}^2}{2m_e} = U_0$.
