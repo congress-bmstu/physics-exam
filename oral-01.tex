@@ -149,8 +149,35 @@
 \end{multicols}
 
 \subsubsection{Постулаты квантовой механики}
+\begin{enumerate}[label=\textbf{Постулат №\arabic{enumi}},leftmargin=2.5cm]
+	\item Состояние квантовой механической системы полностью описывается заданием её волновой функции $\Psi(\vec r, t)$.
+	
+	\item В квантовой механике любой физической величине сопоставляется (линейный и самосопряженный) оператор этой величины:
+	\begin{align*}
+		\widehat x &= x\\
+		\widehat{P_x} &= -i\hbar \frac{\partial}{\partial x}\\
+		\widehat E_k &= \frac{\widehat p}{2m} = \frac{1}{2m} (-i\hbar\nabla)(-i\hbar\nabla)=-\frac{\hbar^2}{2m}\nabla^2\\
+		\widehat U &= U\\
+		\widehat H &= \widehat K + \widehat U\\
+		\widehat L_x &= \widehat{y}\widehat{P_z}-\widehat{z}\widehat{P_y}=-i\hbar\left(y\frac{\partial}{\partial z}-z\frac{\partial}{\partial y}\right)\\
+		\widehat L &= {\widehat L_x}^2+{\widehat L_y}^2+{\widehat L_z}^2=-\hbar^2\left(\frac{1}{\sin \theta}\frac{\partial}{\partial\theta}\left(\sin \theta \frac{\partial}{\partial\theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\varphi^2}\right)
+	\end{align*}
+	Операторная запись уравнения Шрёдингера:
+	\begin{equation*}
+		i\hbar \frac{\partial \Psi}{\partial t} = \widehat{H} \Psi
+	\end{equation*}
+	
+	\item В результате измерений физических величин $f$ в квантово-механической системе, могут быть получены только значения $f$, являющиеся собственными значениями оператора $\widehat f$.
+	
+	\item Пусть квантово-механическая система описывается $\Psi=\sum_n C_n\Psi_n$. Тогда вероятность результата измерения $f_n: P_n = \left|C_n\right|^2$. Вероятность редукции $\Psi \to \Psi_n$ равна $P_n$.
+\end{enumerate}
 
 \subsubsection{Принцип суперпозиции квантовых состояний}
+
+Если система может находиться в состоянии $\Psi_1$ и в состоянии $\Psi_2$, то она может находиться в состоянии $\Psi=\Psi_1C_1+\Psi_2C_2,\,c_i\in\mathbb{C}$. В таком состоянии $\left|C_n\right|^2$ определеяет вероятность того, что при измерении мы обнаружим частицу в квантовом состоянии описываемом $\Psi_n$.
+\begin{equation*}
+	\sum_{n=1}^{N} \left|C_n\right|^2 = 1
+\end{equation*}
 
 \subsubsection{Принцип неразличимости тождественных частиц}
 Состояние электрона в атоме определяется набором четырёх квантовых чисел:
@@ -180,7 +207,7 @@
 		Запись   & $\Psi(x_1,x_2)=\Psi(x_2,x_1)$ & $-\Psi(x_1,x_2)=\Psi(x_2,x_1)$ \\ \hline
 		Спин     &      $m_s\in\mathbb{Z}$       & $m_s\in\mathbb{Z}+\frac{1}{2}$ \\ \hline
 		Название &         \text{бозоны}         &        \text{фермионы}         \\ \hline
-		Примеры  &     $\pi$-мезоны, фотоны      &  электроны, протоны, нейтроны  \\ \hline
+		Примеры  &     $\pi$-мезоны, фотоны, фонон      &  электроны, протоны, нейтроны  \\ \hline
 	\end{tabular}
 	\end{center}
 \end{table}
