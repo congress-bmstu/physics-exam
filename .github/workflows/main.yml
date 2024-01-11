@@ -58,9 +58,9 @@ jobs:
           tag_name: pdf
           files: |
             document.pdf
-      - name: Publish HTML to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        if: always()
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: /
+      # - name: Publish HTML to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: always()
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: /
