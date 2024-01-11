@@ -6,6 +6,7 @@ permissions:
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    continue-on-error: true
     env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
