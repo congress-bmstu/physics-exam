@@ -2,12 +2,13 @@
 Эффективная масса $m^*$. Вывести формулы для концентрации $n_e$ электронов и дырок $n_h$
 в чистых полупроводниках. Найти положение уровня Ферми в чистых полупроводниках при $T=0$.
 Температурная зависимость собственной проводимости полупроводников.}
+\label{sec:w10}
 {\footnotesize\paragraph{\footnotesize Справка.} По поводу понятий
   \emph{волновое число} $ k = 2\pi/\lambda $, \emph{групповая скорость} и формулы $ p = \hbar k
   $ см раздел \ref{sec:waves}.
 }
 
-\paragraph{Эффективная масса} рассмотрим группу электронов полуклассически: $p = \hbar k$, тогда
+\paragraph{Эффективная масса.} Рассмотрим группу электронов полуклассически: $p = \hbar k$, тогда
 групповая скорость:
 \[
   v_\text{гр} = \dfrac{\partial \omega}{\partial k} = \dfrac{\partial E}{\partial p} 
@@ -28,7 +29,7 @@ t},\
 находятся в периодическом кристалле.
 %TODO: что такое периодический кристалл
 
-\paragraph{Электропроводность твердых тел} $\vec{J} = en \vec{v}_d$, $\vec{v}_d = \vec{a} \cdot \tau$, где $\tau$ -- время <<релаксации>> между соударениями с рассеивающими элементами. Тогда:
+\paragraph{Электропроводность твердых тел.} $\vec{J} = en \vec{v}_d$, $\vec{v}_d = \vec{a} \cdot \tau$, где $\tau$ -- время <<релаксации>> между соударениями с рассеивающими элементами. Тогда:
 \begin{equation}\label{write:10:v_d}
   \vec{a} = \dfrac{\vec{F}}{m^*} = \dfrac{e\vec{E}}{m^*}
   \Rightarrow
@@ -39,37 +40,48 @@ t},\
 $\mu$ называют подвижностью. $\vec{J} = \dfrac{1}{\rho_0} \vec{E} = \sigma \vec{E}$ -- $\rho$ --
 удельное сопротивление, $\sigma$ -- удельная проводимость.
 
-\paragraph{Концентрация электронов и дырок} концентрация свободных электронов:
+\paragraph{Концентрация электронов и дырок.} Концентрация свободных электронов
+согласно разделу \ref{sec:free-elecs}
 \[
-  dn_e = f_\text{ФД} (E) dN_e = f_\text{ФД} \cdot g(E) dE, g(E) \sim \sqrt{E}.
+  % dn_e = f_\text{ФД} (E) dN_e = f_\text{ФД} \cdot g(E) dE, g(E) \sim \sqrt{E}.
+  dn_e \sim \frac{g(E)}{\exp \left( \frac{E - E_F}{kT} \right) + 1}dE.
 \]
-Сдвинем энергии так, чтобы 0 энергии приходился на верхнюю часть зоны валентности. 
+Сделаем замену $ g(E) = (g(k) dV_k)/dE $ (см. раздел \ref{sec:plot-mod} (плотность
+для энергии)).
+Сдвинем энергии так, чтобы нуль энергии приходился на верхнюю часть зоны валентности. 
 Нас интересуют только электроны, находящиеся в зоне проводимости, то есть энергия которых
 больше ширины запрещённой зоны $E_g$. Концентрацию электронов можно найти путём интегрирования:
-$n_e = \int dn_e$, однако, используем также то, что $E-E_F \gg kT$, тогда в знаменателе у
+$n_e = \int dn_e$, однако, используем также то, что (на практике как правило) $E-E_F \gg kT$, тогда в знаменателе у
 распределения Ф-Д можно пренебречь единицей. Тогда:
-\[
-  n_e \sim \int_{E_g}^{+\infty} \sqrt{E-E_g} e^{-\dfrac{E}{kT}} dE \sim \dots
-  \sim (m_e^*)^{3/2} T^{3/2} \cdot e^{\dfrac{E_F - E_g}{kT}}
-\]
+\begin{multline*}
+  n_e \sim (m^\ast_e)^{3/2}\cdot\exp \left( \frac{E_F}{kT} \right)
+  \int\limits_{E_g}^{+\infty} \sqrt{E-E_g} e^{-\dfrac{E}{kT}} dE = \\
+  = (m^\ast_e)^{3/2}\exp \left( \frac{E_F - E_g}{kT} \right)
+  \int\limits_{E_g}^\infty \sqrt{E - E_g} \exp \left( - \frac{E-E_g}{kT} \right)
+  \,dE \sim\\\sim
+  (m^\ast_e)^{3/2}\exp \left( \frac{E_F - E_g}{kT} \right) (kT)^{3/2}
+  \int\limits_{0}^\infty \sqrt\xi e^{-\xi} \, d\xi
+  \sim (m_e^*)^{3/2} T^{3/2} \cdot exp\left(\frac{E_F - E_g}{kT}\right).
+\end{multline*}
 У дырок наоборот, рассматривается только энергии меньше нуля, для них так же верно
 $E<0 \Rightarrow |E-E_F| \gg kT$, тогда
 $1 - f_\text{ФД} = 1 - \dfrac{1}{e^{\dots} + 1} \approx 1 - \left( 1 - e^{\dots} \right) = e^{\dfrac{E-E_F}{kT}} $. 
 \[
-  n_h \sim \int_{-\infty}^0 \sqrt{-E} \cdot e^{\dfrac{E}{kT}} dE \sim (m_h^*)^{3/2} T^{3/2} e^{-\dfrac{E_f}{kT}}
+  n_h \sim (m_e^\ast)^{3/2} \exp \left( -\frac{E_F}{kT} \right)  \int_{-\infty}^0 \sqrt{-E} \cdot e^{\dfrac{E}{kT}} dE \sim (m_h^*)^{3/2} T^{3/2} e^{-\dfrac{E_F}{kT}}
 \]
 
 \paragraph{Положение уровня Ферми в чистых полупроводниках}
 
 Когда полупроводник чистый, концентрация электронов в зоне проводимости равна концентрации электронов в зоне валентности:
 \[
-  n_e = n_h \Leftrightarrow (m_e^*)^{3/2} T^{3/2} e^{\dfrac{E_G - E_g}{kT}} = (m_h^*)^{3/2} T^{3/2} e^{-\dfrac{E_F}{kT}} 
+  n_e = n_h \Leftrightarrow (m_e^*)^{3/2} T^{3/2} e^{\dfrac{E_F - E_g}{kT}} = (m_h^*)^{3/2} T^{3/2} e^{-\dfrac{E_F}{kT}} 
   \Leftrightarrow
-  E_F(T) = \dfrac{3}{4} kT \ln (\dfrac{m_h^*}{m_e^*}) + \dfrac{E_g}{2}
+  E_F(T) = \dfrac{3}{4} kT \ln \left(\dfrac{m_h^*}{m_e^*}\right) + \dfrac{E_g}{2}
 \]
 при $T = 0$, соотвественно, уровень Ферми находится ровно по середине запрещённой зоны.
 
 \paragraph{Температурная зависимость}
+Проводимость
 \[
   \sigma = e^2 \left( \dfrac{n_e \tau_e}{m_e^*} + \dfrac{n_h \tau_h}{m_h^*} \right) 
 \]
